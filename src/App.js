@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   const cards = pokedexData?.pokemon_entries ?? [];
-  let searchedCards = cards.filter((entry) => entry.pokemon_species.name.includes(filters.search));
+  let searchedCards = cards.filter((entry) => entry.pokemon_species.name.includes(filters.search.toLowerCase()));
 
   const compareFn = (a, b) => {
     const aName = a.pokemon_species.name;
@@ -52,7 +52,7 @@ function App() {
   return (
       <div className="center-container">
         <Header/>
-        <Filters filters={filters} setFilters={setFilters} />
+        <Filters filters={filters} setFilters={setFilters} setCurrentPage={setCurrentPage}/>
 
         <div className="cards-container">
             {cardsOnPage.map(pokemonEntry => <Card pokemonEntry={pokemonEntry} key={pokemonEntry.entry_number}/>)}

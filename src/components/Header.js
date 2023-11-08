@@ -7,7 +7,7 @@ export default function Header () {
             <img className="header__logo" src={pokedexLogo} alt="Pokedex" />
 
             <div className='header__github-container'>
-                <a href="https://github.com/" target="_blank" rel="noreferrer">
+                <a href="https://github.com/kan110/pokedex" target="_blank" rel="noreferrer">
                     <img src={githubLogo} alt="Project on Github" />
                 </a>
             </div>

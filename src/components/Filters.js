@@ -1,11 +1,12 @@
-export default function Filters ({filters, setFilters}) {
+export default function Filters ({filters, setFilters, setCurrentPage}) {
     const handleChange = (event) => {
         setFilters(prev => {
             return {
                 ...prev,
                 [event.target.name]: event.target.value
             }
-        })
+        });
+        setCurrentPage(1);
     }
 
     return (
